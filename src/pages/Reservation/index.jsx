@@ -24,6 +24,7 @@ const Reservation = () => {
           <input
             type="date"
             id="date-out"
+            min={dateIn}
             value={dateOut}
             onChange={(e) => setDateOut(e.target.value)}
           />
