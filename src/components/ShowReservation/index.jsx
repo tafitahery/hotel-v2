@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Proptype from 'prop-types';
 import { getData } from '../../utils/data';
 
 const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
@@ -37,6 +38,13 @@ const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
       </td>
     </tr>
   );
+};
+
+ShowReservation.propTypes = {
+  dateIn: Proptype.string.isRequired,
+  dateOut: Proptype.string.isRequired,
+  clientId: Proptype.string.isRequired,
+  roomId: Proptype.string.isRequired,
 };
 
 export default ShowReservation;

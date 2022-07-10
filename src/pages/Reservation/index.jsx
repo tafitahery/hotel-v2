@@ -45,6 +45,7 @@ const Reservation = () => {
           <input
             type="date"
             id="date-in"
+            required
             value={dateIn}
             onChange={(e) => setDateIn(e.target.value)}
           />
@@ -54,6 +55,7 @@ const Reservation = () => {
           <input
             type="date"
             id="date-out"
+            required
             min={dateIn}
             value={dateOut}
             onChange={(e) => setDateOut(e.target.value)}
@@ -63,6 +65,7 @@ const Reservation = () => {
           <label htmlFor="client">Client : </label>
           <select
             id="client"
+            required
             value={clientId}
             onChange={(e) => setClientId(e.target.value)}
           >
@@ -76,6 +79,7 @@ const Reservation = () => {
           <label>Chambre : </label>
           <select
             id="room"
+            required
             value={roomId}
             onChange={(e) => setRoomId(e.target.value)}
           >
