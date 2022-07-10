@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { getData } from '../../utils/getData';
 
 const Reservation = () => {
   const [dateIn, setDateIn] = useState('');
@@ -10,27 +11,11 @@ const Reservation = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    const getClients = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:4000/clients');
-        setClients(data);
-      } catch (error) {
-        console.log('====== ERROR ======');
-      }
-    };
-    getClients();
+    getData('http://localhost:4000/clients').then((res) => setClients(res));
   }, []);
 
   useEffect(() => {
-    const getRooms = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:4000/rooms');
-        setRooms(data);
-      } catch (error) {
-        console.log('====== ERROR ======');
-      }
-    };
-    getRooms();
+    getData('http://localhost:4000/rooms').then((res) => setRooms(res));
   }, []);
 
   const handleSubmit = (e) => {

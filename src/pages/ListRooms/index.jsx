@@ -1,20 +1,12 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import ShowRoom from '../../components/ShowRoom';
+import { getData } from '../../utils/getData';
 
 const ListRooms = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    const getRooms = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:4000/rooms');
-        setRooms(data);
-      } catch (error) {
-        console.log('======= ERROR =======');
-      }
-    };
-    getRooms();
+    getData('http://localhost:4000/rooms').then((res) => setRooms(res));
   }, []);
 
   return (

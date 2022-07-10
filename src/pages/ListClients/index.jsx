@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import ShowClient from '../../components/ShowClient';
+import { getData } from '../../utils/getData';
 
 const ListClients = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
-    const getClients = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:4000/clients');
-        setClients(data);
-      } catch (error) {
-        console.log('======== ERROR =======');
-      }
-    };
-    getClients();
+    getData('http://localhost:4000/clients').then((res) => setClients(res));
   }, []);
 
   return (
