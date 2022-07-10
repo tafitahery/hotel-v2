@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import ShowClient from '../../components/ShowClient';
 
 const ListClients = () => {
+  const [clients, setClients] = useState([]);
+
+  useEffect(() => {
+    const getClients = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:4000/clients');
+        setClients(data);
+      } catch (error) {
+        console.log('======== ERROR =======');
+      }
+    };
+    getClients();
+  }, []);
+
   return (
     <div>
       <h1>Liste des clients</h1>
@@ -12,10 +28,13 @@ const ListClients = () => {
             <th>Adresse</th>
             <th>CIN</th>
             <th>Téléphone</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr></tr>
+          {clients.map((client) => (
+            <ShowClient key={client.id} client={client} />
+          ))}
         </tbody>
       </table>
     </div>

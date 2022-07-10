@@ -5,14 +5,16 @@
       "lastName": "HERY",
       "address": "Tana",
       "idCard": "09876554321",
-      "phone": "0435267580"
+      "phone": "0435267580",
+      "id": 1
     },
     {
       "firstName": "Lebo",
       "lastName": "SOLOFO",
       "address": "Antsirabe",
       "idCard": "1234567890",
-      "phone": "0536699865"
+      "phone": "0536699865",
+      "id": 2
     }
   ]
 }
