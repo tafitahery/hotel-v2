@@ -4,12 +4,26 @@ import { Link } from 'react-router-dom';
 const Navigation = () => {
   return (
     <div>
-      <Link to="/">Reservation</Link>
-      <Link to="/listReservations">Liste des réservations</Link>
-      <Link to="/createClient">Création Client</Link>
-      <Link to="/listClients">Liste des clients</Link>
-      <Link to="/createRoom">Création Chambre</Link>
-      <Link to="/listRooms">Liste des chambre</Link>
+      <ul>
+        <li>
+          <Link to="/">Reservation</Link>
+        </li>
+        <li>
+          <Link to="/listReservations">Liste des réservations</Link>
+        </li>
+        <li>
+          <Link to="/createClient">Création Client</Link>
+        </li>
+        <li>
+          <Link to="/listClients">Liste des clients</Link>
+        </li>
+        <li>
+          <Link to="/createRoom">Création Chambre</Link>
+        </li>
+        <li>
+          <Link to="/listRooms">Liste des chambre</Link>
+        </li>
+      </ul>
     </div>
   );
 };
