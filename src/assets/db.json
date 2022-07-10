@@ -1,0 +1,18 @@
+{
+  "clients": [
+    {
+      "firstName": "Tafita",
+      "lastName": "HERY",
+      "address": "Tana",
+      "idCard": "09876554321",
+      "phone": "0435267580"
+    },
+    {
+      "firstName": "Lebo",
+      "lastName": "SOLOFO",
+      "address": "Antsirabe",
+      "idCard": "1234567890",
+      "phone": "0536699865"
+    }
+  ]
+}

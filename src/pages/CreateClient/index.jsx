@@ -50,7 +50,7 @@ const CreateClient = () => {
         <div>
           <label htmlFor="phone">Téléphone</label>
           <input
-            type="text"
+            type="tel"
             id="phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
