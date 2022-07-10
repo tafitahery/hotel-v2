@@ -16,5 +16,18 @@
       "phone": "0536699865",
       "id": 2
     }
+  ],
+  "rooms": [
+    {
+      "name": "Chambre 1",
+      "price": 100,
+      "id": 1
+    },
+
+    {
+      "name": "Chambre 2",
+      "price": 100,
+      "id": 2
+    }
   ]
 }
