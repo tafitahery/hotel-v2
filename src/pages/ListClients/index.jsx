@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ShowClient from '../../components/ShowClient';
-import { getData } from '../../utils/getData';
+import { getData } from '../../utils/data';
 
 const ListClients = () => {
   const [clients, setClients] = useState([]);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { getData } from '../../utils/getData';
+import { getData } from '../../utils/data';
 
 const Reservation = () => {
   const [dateIn, setDateIn] = useState('');

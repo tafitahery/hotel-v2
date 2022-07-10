@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ShowReservation from '../../components/ShowReservation';
+import { getData } from '../../utils/data';
 
 const ListReservations = () => {
+  const [reservations, setReservations] = useState([]);
+
+  useEffect(() => {
+    getData('http://localhost:4000/reservations').then((res) =>
+      setReservations(res)
+    );
+  }, []);
+
   return (
     <div>
       <h1>Liste des réservations</h1>
@@ -13,10 +23,20 @@ const ListReservations = () => {
             <th>Date sortie</th>
             <th>Sejour</th>
             <th>Prix</th>
-            <th>Action</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {reservations.map(({ id, dateIn, dateOut, client, room }) => (
+            <ShowReservation
+              key={id}
+              dateIn={dateIn}
+              dateOut={dateOut}
+              clientId={client}
+              roomId={room}
+            />
+          ))}
+        </tbody>
       </table>
     </div>
   );

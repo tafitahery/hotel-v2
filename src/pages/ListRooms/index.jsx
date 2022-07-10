@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ShowRoom from '../../components/ShowRoom';
-import { getData } from '../../utils/getData';
+import { getData } from '../../utils/data';
 
 const ListRooms = () => {
   const [rooms, setRooms] = useState([]);
