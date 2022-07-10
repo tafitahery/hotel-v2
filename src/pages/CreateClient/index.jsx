@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const CreateClient = () => {
@@ -7,8 +8,28 @@ const CreateClient = () => {
   const [idCard, setIdcard] = useState('');
   const [phone, setPhone] = useState('');
 
+  const hanldeSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      firstName,
+      lastName,
+      address,
+      idCard,
+      phone,
+    };
+
+    axios.post('http://localhost:4000/clients', data).then(() => {
+      setFirstName('');
+      setLastName('');
+      setAddress('');
+      setIdcard('');
+      setPhone('');
+    });
+  };
+
   return (
-    <div>
+    <form onSubmit={(e) => hanldeSubmit(e)}>
       <h1>Création d'un client</h1>
       <div>
         <div>
@@ -16,6 +37,7 @@ const CreateClient = () => {
           <input
             type="text"
             id="first-name"
+            required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
@@ -25,6 +47,7 @@ const CreateClient = () => {
           <input
             type="text"
             id="last-name"
+            required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -34,6 +57,7 @@ const CreateClient = () => {
           <input
             type="text"
             id="address"
+            required
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
@@ -43,6 +67,7 @@ const CreateClient = () => {
           <input
             type="text"
             id="id-card"
+            required
             value={idCard}
             onChange={(e) => setIdcard(e.target.value)}
           />
@@ -52,26 +77,16 @@ const CreateClient = () => {
           <input
             type="tel"
             id="phone"
+            required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         <div>
-          <button>Valider</button>
-          <button
-            onClick={() => {
-              setFirstName('');
-              setLastName('');
-              setAddress('');
-              setIdcard('');
-              setPhone('');
-            }}
-          >
-            Annuler
-          </button>
+          <input type="submit" value="Valider" />
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
