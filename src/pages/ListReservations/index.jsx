@@ -27,13 +27,13 @@ const ListReservations = () => {
           </tr>
         </thead>
         <tbody>
-          {reservations.map(({ id, dateIn, dateOut, client, room }) => (
+          {reservations.map(({ id, dateIn, dateOut, clientId, roomId }) => (
             <ShowReservation
               key={id}
               dateIn={dateIn}
               dateOut={dateOut}
-              clientId={client}
-              roomId={room}
+              clientId={clientId}
+              roomId={roomId}
             />
           ))}
         </tbody>

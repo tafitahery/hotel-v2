@@ -5,8 +5,8 @@ import { getData } from '../../utils/data';
 const Reservation = () => {
   const [dateIn, setDateIn] = useState('');
   const [dateOut, setDateOut] = useState('');
-  const [client, setClient] = useState('');
-  const [room, setRoom] = useState('');
+  const [clientId, setClientId] = useState('');
+  const [roomId, setRoomId] = useState('');
   const [clients, setClients] = useState([]);
   const [rooms, setRooms] = useState([]);
 
@@ -24,15 +24,15 @@ const Reservation = () => {
     const data = {
       dateIn,
       dateOut,
-      client,
-      room,
+      clientId,
+      roomId,
     };
 
     axios.post('http://localhost:4000/reservations', data).then(() => {
       setDateIn('');
       setDateOut('');
-      setClient('');
-      setRoom('');
+      setClientId('');
+      setRoomId('');
     });
   };
 
@@ -63,8 +63,8 @@ const Reservation = () => {
           <label htmlFor="client">Client : </label>
           <select
             id="client"
-            value={client}
-            onChange={(e) => setClient(e.target.value)}
+            value={clientId}
+            onChange={(e) => setClientId(e.target.value)}
           >
             <option value=""> --- </option>
             {clients.map(({ id, firstName, lastName }) => (
@@ -76,8 +76,8 @@ const Reservation = () => {
           <label>Chambre : </label>
           <select
             id="room"
-            value={room}
-            onChange={(e) => setRoom(e.target.value)}
+            value={roomId}
+            onChange={(e) => setRoomId(e.target.value)}
           >
             <option value=""> --- </option>
             {rooms.map(({ id, name }) => (

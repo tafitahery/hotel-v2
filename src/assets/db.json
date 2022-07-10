@@ -32,10 +32,17 @@
   "reservations": [
     {
       "dateIn": "2022-07-10",
-      "dateOut": "2022-07-13",
-      "client": "2",
-      "room": "1",
+      "dateOut": "2022-07-15",
+      "clientId": "2",
+      "roomId": "1",
       "id": 1
+    },
+    {
+      "dateIn": "2022-07-12",
+      "dateOut": "2022-07-15",
+      "clientId": "2",
+      "roomId": "2",
+      "id": 2
     }
   ]
 }

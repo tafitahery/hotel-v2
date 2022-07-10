@@ -7,13 +7,13 @@ const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
 
   useEffect(() => {
     getData('http://localhost:4000/clients', clientId).then((res) =>
-      setClient(res[0])
+      setClient(res)
     );
   }, [clientId]);
 
   useEffect(() => {
     getData('http://localhost:4000/rooms', roomId).then((res) => {
-      setRoom(res[0]);
+      setRoom(res);
     });
   }, [roomId]);
 
