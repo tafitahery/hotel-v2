@@ -32,9 +32,18 @@ const ListClients = () => {
           </tr>
         </thead>
         <tbody>
-          {clients.map((client) => (
-            <ShowClient key={client.id} client={client} />
-          ))}
+          {clients.map(
+            ({ id, firstName, lastName, address, idCard, phone }) => (
+              <ShowClient
+                key={id}
+                firstName={firstName}
+                lastName={lastName}
+                address={address}
+                idCard={idCard}
+                phone={phone}
+              />
+            )
+          )}
         </tbody>
       </table>
     </div>

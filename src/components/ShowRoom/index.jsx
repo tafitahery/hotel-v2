@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ShowRoom = ({ name, price }) => {
   return (
@@ -11,6 +12,11 @@ const ShowRoom = ({ name, price }) => {
       </td>
     </tr>
   );
+};
+
+ShowRoom.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default ShowRoom;
