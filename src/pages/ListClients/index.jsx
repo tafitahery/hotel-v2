@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
+
 import ShowClient from '../../components/ShowClient';
 import { getData } from '../../utils/data';
 
@@ -12,7 +14,7 @@ const ListClients = () => {
   return (
     <div>
       <h1>Liste des clients</h1>
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Prénom</th>
@@ -37,7 +39,7 @@ const ListClients = () => {
             )
           )}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };

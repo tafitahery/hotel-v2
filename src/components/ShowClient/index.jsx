@@ -1,5 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 
 const ShowClient = ({ firstName, lastName, address, idCard, phone }) => {
   return (
@@ -10,8 +11,8 @@ const ShowClient = ({ firstName, lastName, address, idCard, phone }) => {
       <td>{idCard}</td>
       <td>{phone}</td>
       <td>
-        <button>Editer</button>
-        <button>Supprimer</button>
+        <Button variant="secondary">Editer</Button>{' '}
+        <Button variant="danger">Supprimer</Button>
       </td>
     </tr>
   );
