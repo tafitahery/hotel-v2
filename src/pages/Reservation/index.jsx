@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Button, Form } from 'react-bootstrap';
+
 import { getData } from '../../utils/data';
 
 const Reservation = () => {
@@ -37,34 +39,31 @@ const Reservation = () => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <div>
       <h1>Réservation</h1>
-      <div>
-        <div>
-          <label htmlFor="date-in">Date d'entrée : </label>
-          <input
+      <Form onSubmit={(e) => handleSubmit(e)}>
+        <Form.Group className="mb-3" controlId="date-in">
+          <Form.Label>Date d'entrée</Form.Label>
+          <Form.Control
             type="date"
-            id="date-in"
             required
             value={dateIn}
             onChange={(e) => setDateIn(e.target.value)}
           />
-        </div>
-        <div>
-          <label htmlFor="date-out">Date de sortie : </label>
-          <input
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="date-out">
+          <Form.Label>Date de sortie</Form.Label>
+          <Form.Control
             type="date"
-            id="date-out"
-            required
             min={dateIn}
+            required
             value={dateOut}
             onChange={(e) => setDateOut(e.target.value)}
           />
-        </div>
-        <div>
-          <label htmlFor="client">Client : </label>
-          <select
-            id="client"
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="client">
+          <Form.Label>Client</Form.Label>
+          <Form.Select
             required
             value={clientId}
             onChange={(e) => setClientId(e.target.value)}
@@ -73,29 +72,29 @@ const Reservation = () => {
             {clients.map(({ id, firstName, lastName }) => (
               <option value={id} key={id}>{`${lastName} ${firstName}`}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label>Chambre : </label>
-          <select
-            id="room"
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="room">
+          <Form.Label>Chambre</Form.Label>
+          <Form.Select
             required
             value={roomId}
             onChange={(e) => setRoomId(e.target.value)}
           >
+            <option value=""> --- </option>
             <option value=""> --- </option>
             {rooms.map(({ id, name }) => (
               <option value={id} key={id}>
                 {name}
               </option>
             ))}
-          </select>
-        </div>
-        <div>
-          <input type="submit" value="Valider" />
-        </div>
-      </div>
-    </form>
+          </Form.Select>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Valider
+        </Button>
+      </Form>
+    </div>
   );
 };
 
