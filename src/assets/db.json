@@ -11,7 +11,7 @@
     {
       "firstName": "Lebo",
       "lastName": "SOLOFO",
-      "address": "Antsirabe",
+      "address": "Texas",
       "idCard": "224677816520",
       "phone": "+261340353664",
       "id": 2
@@ -29,20 +29,5 @@
       "id": 2
     }
   ],
-  "reservations": [
-    {
-      "dateIn": "2022-07-10",
-      "dateOut": "2022-07-15",
-      "clientId": "2",
-      "roomId": "1",
-      "id": 1
-    },
-    {
-      "dateIn": "2022-07-12",
-      "dateOut": "2022-07-15",
-      "clientId": "2",
-      "roomId": "2",
-      "id": 2
-    }
-  ]
+  "reservations": []
 }
