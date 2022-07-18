@@ -14,7 +14,7 @@ const ListReservations = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-4 ms-3 me-3">
       <h1>Liste des réservations</h1>
       <Table striped bordered hover>
         <thead>

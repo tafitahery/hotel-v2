@@ -39,7 +39,7 @@ const Reservation = () => {
   };
 
   return (
-    <div>
+    <div className="mt-4 ms-3 me-3">
       <h1>Réservation</h1>
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Group className="mb-3" controlId="date-in">

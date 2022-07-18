@@ -30,7 +30,7 @@ const CreateClient = () => {
   };
 
   return (
-    <div>
+    <div className="mt-4 ms-3 me-3">
       <h1>Création d'un client</h1>
       <Form onSubmit={(e) => hanldeSubmit(e)}>
         <Form.Group className="mb-3" controlId="first-name">
