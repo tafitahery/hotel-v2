@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Proptype from 'prop-types';
+import { Button } from 'react-bootstrap';
+
 import { getData } from '../../utils/data';
 
 const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
@@ -33,8 +35,9 @@ const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
       <td>{stay()}</td>
       <td>Ar {room.price * stay()}</td>
       <td>
-        <button>Editer</button>
-        <button>Supprimer</button>
+        <Button variant="secondary">Editer</Button>{' '}
+        <Button variant="danger">Supprimer</Button>{' '}
+        <Button variant="primary">Facturer</Button>
       </td>
     </tr>
   );

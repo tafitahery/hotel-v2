@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
+
 import ShowReservation from '../../components/ShowReservation';
 import { getData } from '../../utils/data';
 
@@ -14,7 +16,7 @@ const ListReservations = () => {
   return (
     <div>
       <h1>Liste des réservations</h1>
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Client</th>
@@ -37,7 +39,7 @@ const ListReservations = () => {
             />
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };
