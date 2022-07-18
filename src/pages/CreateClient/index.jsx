@@ -30,62 +30,64 @@ const CreateClient = () => {
   };
 
   return (
-    <Form onSubmit={(e) => hanldeSubmit(e)}>
+    <div>
       <h1>Création d'un client</h1>
-      <Form.Group className="mb-3" controlId="first-name">
-        <Form.Label>Prénom</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Entrer prénom"
-          required
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="last-name">
-        <Form.Label>Nom</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Entrer nom"
-          required
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="address">
-        <Form.Label>Adresse</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Entrer adresse"
-          required
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="id-card">
-        <Form.Label>CIN</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Entrer numero de CIN"
-          required
-          value={idCard}
-          onChange={(e) => setIdcard(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="phone">
-        <Form.Label>Téléphone</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Entrer numero téléphone"
-          required
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Valider
-      </Button>
-    </Form>
+      <Form onSubmit={(e) => hanldeSubmit(e)}>
+        <Form.Group className="mb-3" controlId="first-name">
+          <Form.Label>Prénom</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Entrer prénom"
+            required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="last-name">
+          <Form.Label>Nom</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Entrer nom"
+            required
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="address">
+          <Form.Label>Adresse</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Entrer adresse"
+            required
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="id-card">
+          <Form.Label>CIN</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Entrer numero de CIN"
+            required
+            value={idCard}
+            onChange={(e) => setIdcard(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="phone">
+          <Form.Label>Téléphone</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Entrer numero téléphone"
+            required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Valider
+        </Button>
+      </Form>
+    </div>
   );
 };
 

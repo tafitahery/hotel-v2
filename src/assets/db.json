@@ -27,6 +27,11 @@
       "name": "Chambre 2",
       "price": 150,
       "id": 2
+    },
+    {
+      "name": "Chambre 3",
+      "price": 150,
+      "id": 3
     }
   ],
   "reservations": []
