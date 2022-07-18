@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
+
 import ShowRoom from '../../components/ShowRoom';
 import { getData } from '../../utils/data';
 
@@ -12,7 +14,7 @@ const ListRooms = () => {
   return (
     <div>
       <h1>Liste des chambres</h1>
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Nom du chambre</th>
@@ -25,7 +27,7 @@ const ListRooms = () => {
             <ShowRoom key={id} name={name} price={price} />
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 
 const ShowRoom = ({ name, price }) => {
   return (
@@ -7,8 +8,8 @@ const ShowRoom = ({ name, price }) => {
       <td>{name}</td>
       <td>Ar {price}</td>
       <td>
-        <button>Editer</button>
-        <button>Supprimer</button>
+        <Button variant="secondary">Editer</Button>{' '}
+        <Button variant="danger">Supprimer</Button>
       </td>
     </tr>
   );
