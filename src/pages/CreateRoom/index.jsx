@@ -21,7 +21,7 @@ const CreateRoom = () => {
   };
 
   return (
-    <div className="lt-4 ms-3 me-3">
+    <div className="mt-4 ms-3 me-3">
       <h1>Création d'un chambre</h1>
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Group className="mb-3" controlId="name">

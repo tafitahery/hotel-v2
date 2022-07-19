@@ -10,6 +10,7 @@ import ListClients from './pages/ListClients';
 import ListReservations from './pages/ListReservations';
 import ListRooms from './pages/ListRooms';
 import Reservation from './pages/Reservation';
+import Home from './pages/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,8 @@ root.render(
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Reservation />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/reservation" element={<Reservation />} />
         <Route path="/listReservations" element={<ListReservations />} />
         <Route path="/createClient" element={<CreateClient />} />
         <Route path="/listClients" element={<ListClients />} />
