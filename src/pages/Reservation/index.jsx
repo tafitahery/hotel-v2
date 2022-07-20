@@ -5,7 +5,13 @@ import { Button, Form } from 'react-bootstrap';
 import { getData } from '../../utils/data';
 
 const Reservation = () => {
-  const [dateIn, setDateIn] = useState('');
+  const now = new Date(Date.now())
+    .toLocaleDateString()
+    .split('/')
+    .reverse()
+    .join('-');
+
+  const [dateIn, setDateIn] = useState(now);
   const [dateOut, setDateOut] = useState('');
   const [clientId, setClientId] = useState('');
   const [roomId, setRoomId] = useState('');
@@ -46,6 +52,7 @@ const Reservation = () => {
           <Form.Label>Date d'entrée</Form.Label>
           <Form.Control
             type="date"
+            min={now}
             required
             value={dateIn}
             onChange={(e) => setDateIn(e.target.value)}
