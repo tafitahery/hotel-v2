@@ -12,6 +12,7 @@ const CreateRoom = () => {
     const data = {
       name,
       price: parseInt(price),
+      isReserved: false,
     };
 
     axios.post('http://localhost:4000/rooms', data).then(() => {

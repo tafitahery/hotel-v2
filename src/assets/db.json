@@ -21,26 +21,15 @@
     {
       "name": "Chambre 1",
       "price": 100,
+      "isReserved": false,
       "id": 1
     },
     {
       "name": "Chambre 2",
       "price": 150,
+      "isReserved": false,
       "id": 2
-    },
-    {
-      "name": "Chambre 3",
-      "price": 150,
-      "id": 3
     }
   ],
-  "reservations": [
-    {
-      "dateIn": "2022-07-18",
-      "dateOut": "2022-07-21",
-      "clientId": "1",
-      "roomId": "3",
-      "id": 1
-    }
-  ]
+  "reservations": []
 }
