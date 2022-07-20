@@ -40,8 +40,7 @@ const Reservation = () => {
           (acc, elt) =>
             (new Date(elt.dateIn) <= new Date(dateIn) &&
               new Date(elt.dateOut) >= new Date(dateIn)) ||
-            (new Date(elt.dateIn) <= new Date(dateOut) &&
-              new Date(elt.dateOut) >= new Date(dateOut))
+            new Date(elt.dateIn) <= new Date(dateOut)
               ? acc
               : [...acc, elt.roomId],
           []
