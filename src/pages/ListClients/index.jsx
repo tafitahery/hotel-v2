@@ -30,6 +30,7 @@ const ListClients = () => {
             ({ id, firstName, lastName, address, idCard, phone }) => (
               <ShowClient
                 key={id}
+                id={id}
                 firstName={firstName}
                 lastName={lastName}
                 address={address}

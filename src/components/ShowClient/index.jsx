@@ -1,8 +1,9 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import { Button } from 'react-bootstrap';
+import EditClient from '../EditClient';
 
-const ShowClient = ({ firstName, lastName, address, idCard, phone }) => {
+const ShowClient = ({ id, firstName, lastName, address, idCard, phone }) => {
   return (
     <tr>
       <td>{firstName}</td>
@@ -11,8 +12,7 @@ const ShowClient = ({ firstName, lastName, address, idCard, phone }) => {
       <td>{idCard}</td>
       <td>{phone}</td>
       <td>
-        <Button variant="secondary">Editer</Button>{' '}
-        <Button variant="danger">Supprimer</Button>
+        <EditClient id={id} /> <Button variant="danger">Supprimer</Button>
       </td>
     </tr>
   );
