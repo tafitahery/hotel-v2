@@ -12,6 +12,7 @@ import ListRooms from './pages/ListRooms';
 import Reservation from './pages/Reservation';
 import Home from './pages/Home';
 import UpdateClient from './pages/UpdateClient';
+import UpdateRoom from './pages/UpdateRoom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,7 @@ root.render(
         <Route path="/updateClient/:id" element={<UpdateClient />} />
         <Route path="/createRoom" element={<CreateRoom />} />
         <Route path="/listRooms" element={<ListRooms />} />
+        <Route path="/updateRoom/:id" element={<UpdateRoom />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

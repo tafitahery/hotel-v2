@@ -20,14 +20,12 @@
   "rooms": [
     {
       "name": "Chambre 1",
-      "price": 100,
-      "isReserved": false,
+      "price": 250,
       "id": 1
     },
     {
       "name": "Chambre 2",
-      "price": 150,
-      "isReserved": false,
+      "price": 300,
       "id": 2
     }
   ],
