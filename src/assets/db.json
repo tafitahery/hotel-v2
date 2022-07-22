@@ -36,13 +36,6 @@
       "clientId": "1",
       "roomId": "1",
       "id": 1
-    },
-    {
-      "dateIn": "2022-07-25",
-      "dateOut": "2022-07-27",
-      "clientId": "2",
-      "roomId": "2",
-      "id": 2
     }
   ]
 }
