@@ -32,6 +32,7 @@ const ListReservations = () => {
           {reservations.map(({ id, dateIn, dateOut, clientId, roomId }) => (
             <ShowReservation
               key={id}
+              id={id}
               dateIn={dateIn}
               dateOut={dateOut}
               clientId={clientId}

@@ -3,8 +3,9 @@ import Proptype from 'prop-types';
 import { Button } from 'react-bootstrap';
 
 import { getData } from '../../utils/data';
+import EditReservation from '../EditReservation';
 
-const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
+const ShowReservation = ({ id, dateIn, dateOut, clientId, roomId }) => {
   const [client, setClient] = useState({});
   const [room, setRoom] = useState({});
 
@@ -35,8 +36,7 @@ const ShowReservation = ({ dateIn, dateOut, clientId, roomId }) => {
       <td>{stay()}</td>
       <td>Ar {room.price * stay()}</td>
       <td>
-        <Button variant="secondary">Editer</Button>{' '}
-        <Button variant="danger">Supprimer</Button>{' '}
+        <EditReservation id={id} /> <Button variant="danger">Supprimer</Button>{' '}
         <Button variant="primary">Facturer</Button>
       </td>
     </tr>
