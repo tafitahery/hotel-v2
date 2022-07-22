@@ -3,7 +3,15 @@ import Proptypes from 'prop-types';
 import EditClient from '../EditClient';
 import DeleteClient from '../DeleteClient';
 
-const ShowClient = ({ id, firstName, lastName, address, idCard, phone }) => {
+const ShowClient = ({
+  id,
+  firstName,
+  lastName,
+  address,
+  idCard,
+  phone,
+  setClients,
+}) => {
   return (
     <tr>
       <td>{firstName}</td>
@@ -12,7 +20,7 @@ const ShowClient = ({ id, firstName, lastName, address, idCard, phone }) => {
       <td>{idCard}</td>
       <td>{phone}</td>
       <td>
-        <EditClient id={id} /> <DeleteClient id={id} />
+        <EditClient id={id} /> <DeleteClient id={id} setClients={setClients} />
       </td>
     </tr>
   );

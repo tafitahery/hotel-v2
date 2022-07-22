@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { getData } from '../../utils/data';
 
-const DeleteClient = ({ id }) => {
+const DeleteClient = ({ id, setClients }) => {
   const handleDelete = () => {
     axios.delete('http://localhost:4000/clients/' + id);
+    getData('http://localhost:4000/clients').then((res) => setClients(res));
   };
 
   return (

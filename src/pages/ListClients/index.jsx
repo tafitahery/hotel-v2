@@ -9,7 +9,7 @@ const ListClients = () => {
 
   useEffect(() => {
     getData('http://localhost:4000/clients').then((res) => setClients(res));
-  }, [clients]);
+  }, []);
 
   return (
     <div className="mt-4 ms-3 me-3">
@@ -36,6 +36,7 @@ const ListClients = () => {
                 address={address}
                 idCard={idCard}
                 phone={phone}
+                setClients={setClients}
               />
             )
           )}
