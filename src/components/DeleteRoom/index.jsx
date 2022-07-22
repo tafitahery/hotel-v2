@@ -3,17 +3,18 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { getData } from '../../utils/data';
 
-const DeleteClient = ({ id, setClients }) => {
+const DeleteRoom = ({ id, setRooms }) => {
   const handleDelete = () => {
-    axios.delete('http://localhost:4000/clients/' + id);
-    getData('http://localhost:4000/clients').then((res) => setClients(res));
+    axios.delete('http://localhost:4000/rooms/' + id);
+    getData('http://localhost:4000/rooms').then((res) => setRooms(res));
   };
 
   return (
     <Button
       variant="danger"
       onClick={() => {
-        if (window.confirm('Voulez vous supprimer ce client ?')) handleDelete();
+        if (window.confirm('Voulez vous supprimer ce chambre ?'))
+          handleDelete();
       }}
     >
       Supprimer
@@ -21,4 +22,4 @@ const DeleteClient = ({ id, setClients }) => {
   );
 };
 
-export default DeleteClient;
+export default DeleteRoom;

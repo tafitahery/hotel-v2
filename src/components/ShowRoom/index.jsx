@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
 import EditRoom from '../EditRoom';
+import DeleteRoom from '../DeleteRoom';
 
-const ShowRoom = ({ id, name, price }) => {
+const ShowRoom = ({ id, name, price, setRooms }) => {
   return (
     <tr>
       <td>{name}</td>
       <td>Ar {price}</td>
       <td>
-        <EditRoom id={id} /> <Button variant="danger">Supprimer</Button>
+        <EditRoom id={id} /> <DeleteRoom id={id} setRooms={setRooms} />
       </td>
     </tr>
   );

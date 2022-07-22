@@ -24,7 +24,13 @@ const ListRooms = () => {
         </thead>
         <tbody>
           {rooms.map(({ id, name, price }) => (
-            <ShowRoom key={id} id={id} name={name} price={price} />
+            <ShowRoom
+              key={id}
+              id={id}
+              name={name}
+              price={price}
+              setRooms={setRooms}
+            />
           ))}
         </tbody>
       </Table>
