@@ -4,8 +4,16 @@ import { Button } from 'react-bootstrap';
 
 import { getData } from '../../utils/data';
 import EditReservation from '../EditReservation';
+import DeleteReservation from '../DeleteReservation';
 
-const ShowReservation = ({ id, dateIn, dateOut, clientId, roomId }) => {
+const ShowReservation = ({
+  id,
+  dateIn,
+  dateOut,
+  clientId,
+  roomId,
+  setReservations,
+}) => {
   const [client, setClient] = useState({});
   const [room, setRoom] = useState({});
 
@@ -36,7 +44,8 @@ const ShowReservation = ({ id, dateIn, dateOut, clientId, roomId }) => {
       <td>{stay()}</td>
       <td>Ar {room.price * stay()}</td>
       <td>
-        <EditReservation id={id} /> <Button variant="danger">Supprimer</Button>{' '}
+        <EditReservation id={id} />{' '}
+        <DeleteReservation id={id} setReservations={setReservations} />{' '}
         <Button variant="primary">Facturer</Button>
       </td>
     </tr>

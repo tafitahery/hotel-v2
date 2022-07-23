@@ -37,6 +37,7 @@ const ListReservations = () => {
               dateOut={dateOut}
               clientId={clientId}
               roomId={roomId}
+              setReservations={setReservations}
             />
           ))}
         </tbody>

@@ -32,8 +32,8 @@
   ],
   "reservations": [
     {
-      "dateIn": "2022-07-25",
-      "dateOut": "2022-07-26",
+      "dateIn": "2022-07-23",
+      "dateOut": "2022-07-25",
       "clientId": "1",
       "roomId": "1",
       "id": 1
