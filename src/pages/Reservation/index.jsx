@@ -17,7 +17,7 @@ const Reservation = () => {
   const [roomId, setRoomId] = useState('');
   const [clients, setClients] = useState([]);
   const [rooms, setRooms] = useState([]);
-  const [availableRoomId, setAvailableRoomId] = useState([]);
+  const [ocuppedRoomId, setOcuppedRoomId] = useState([]);
 
   useEffect(() => {
     getData('http://localhost:4000/clients').then((res) => setClients(res));
@@ -26,27 +26,31 @@ const Reservation = () => {
   useEffect(() => {
     getData('http://localhost:4000/rooms').then((res) => {
       let tmp = [];
-      availableRoomId.forEach((id) =>
-        res.forEach((elt) => elt.id === parseInt(id) && tmp.push(elt))
-      );
-      setRooms(tmp);
+      if (ocuppedRoomId.length === 0) {
+        setRooms(res);
+      } else {
+        ocuppedRoomId.forEach((id) =>
+          res.forEach((elt) => elt.id !== parseInt(id) && tmp.push(elt))
+        );
+        setRooms(tmp);
+      }
     });
-  }, [availableRoomId]);
+  }, [ocuppedRoomId]);
 
   useEffect(() => {
-    getData('http://localhost:4000/reservations').then((res) =>
-      setAvailableRoomId(
+    getData('http://localhost:4000/reservations').then((res) => {
+      setOcuppedRoomId(
         res.reduce(
           (acc, elt) =>
-            (new Date(elt.dateIn) <= new Date(dateIn) &&
-              new Date(elt.dateOut) >= new Date(dateIn)) ||
-            new Date(elt.dateIn) <= new Date(dateOut)
+            (new Date(elt.dateIn) > new Date(dateIn) ||
+              new Date(elt.dateOut) < new Date(dateIn)) &&
+            new Date(elt.dateIn) > new Date(dateOut)
               ? acc
               : [...acc, elt.roomId],
           []
         )
-      )
-    );
+      );
+    });
   }, [dateIn, dateOut]);
 
   const handleSubmit = (e) => {
@@ -76,6 +80,7 @@ const Reservation = () => {
           <Form.Control
             type="date"
             min={now}
+            max={dateOut}
             required
             value={dateIn}
             onChange={(e) => setDateIn(e.target.value)}

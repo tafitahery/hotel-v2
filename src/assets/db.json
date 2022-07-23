@@ -7,8 +7,36 @@
       "idCard": "224677816520",
       "phone": "+261345267580",
       "id": 1
+    },
+    {
+      "firstName": "Lebo",
+      "lastName": "SOLOFO",
+      "address": "Texas",
+      "idCard": "1234567890",
+      "phone": "+261340353664",
+      "id": 2
     }
   ],
-  "rooms": [],
-  "reservations": []
+  "rooms": [
+    {
+      "name": "Chambre 1",
+      "price": 2000,
+      "id": 1
+    },
+    {
+      "name": "Chambre 2",
+      "price": 1000,
+      "isReserved": false,
+      "id": 2
+    }
+  ],
+  "reservations": [
+    {
+      "dateIn": "2022-07-25",
+      "dateOut": "2022-07-26",
+      "clientId": "1",
+      "roomId": "1",
+      "id": 1
+    }
+  ]
 }
