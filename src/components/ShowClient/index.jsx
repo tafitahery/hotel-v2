@@ -1,7 +1,7 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import EditClient from '../EditClient';
-import DeleteClient from '../DeleteClient';
+import DeleteElement from '../DeleteElement';
 
 const ShowClient = ({
   id,
@@ -12,6 +12,8 @@ const ShowClient = ({
   phone,
   setClients,
 }) => {
+  const url = 'http://localhost:4000/clients';
+
   return (
     <tr>
       <td>{firstName}</td>
@@ -20,7 +22,8 @@ const ShowClient = ({
       <td>{idCard}</td>
       <td>{phone}</td>
       <td>
-        <EditClient id={id} /> <DeleteClient id={id} setClients={setClients} />
+        <EditClient id={id} />{' '}
+        <DeleteElement id={id} setElement={setClients} url={url} />
       </td>
     </tr>
   );

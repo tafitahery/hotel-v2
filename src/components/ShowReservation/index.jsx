@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 
 import { getData } from '../../utils/data';
 import EditReservation from '../EditReservation';
-import DeleteReservation from '../DeleteReservation';
+import DeleteElement from '../DeleteElement';
 
 const ShowReservation = ({
   id,
@@ -16,6 +16,8 @@ const ShowReservation = ({
 }) => {
   const [client, setClient] = useState({});
   const [room, setRoom] = useState({});
+
+  const url = 'http://localhost:4000/reservations';
 
   useEffect(() => {
     getData('http://localhost:4000/clients', clientId).then((res) =>
@@ -45,7 +47,7 @@ const ShowReservation = ({
       <td>Ar {room.price * stay()}</td>
       <td>
         <EditReservation id={id} />{' '}
-        <DeleteReservation id={id} setReservations={setReservations} />{' '}
+        <DeleteElement id={id} setElement={setReservations} url={url} />{' '}
         <Button variant="primary">Facturer</Button>
       </td>
     </tr>

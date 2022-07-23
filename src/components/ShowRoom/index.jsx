@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EditRoom from '../EditRoom';
-import DeleteRoom from '../DeleteRoom';
+import DeleteElement from '../DeleteElement';
 
 const ShowRoom = ({ id, name, price, setRooms }) => {
+  const url = 'http://localhost:4000/rooms';
+
   return (
     <tr>
       <td>{name}</td>
       <td>Ar {price}</td>
       <td>
-        <EditRoom id={id} /> <DeleteRoom id={id} setRooms={setRooms} />
+        <EditRoom id={id} />{' '}
+        <DeleteElement id={id} setElement={setRooms} url={url} />
       </td>
     </tr>
   );
