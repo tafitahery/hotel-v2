@@ -3,7 +3,7 @@
     {
       "firstName": "Tafita",
       "lastName": "HERINANTENAINA",
-      "address": "67HA",
+      "address": "tana",
       "idCard": "224677816520",
       "phone": "+261345267580",
       "id": 1
@@ -12,9 +12,17 @@
   "rooms": [
     {
       "name": "Chambre 1",
-      "price": 2000,
+      "price": 2500,
       "id": 1
     }
   ],
-  "reservations": []
+  "reservations": [
+    {
+      "dateIn": "2022-07-23",
+      "dateOut": "2022-07-27",
+      "clientId": "1",
+      "roomId": "1",
+      "id": 1
+    }
+  ]
 }

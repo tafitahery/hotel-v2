@@ -3,7 +3,7 @@ import Proptype from 'prop-types';
 import { Button } from 'react-bootstrap';
 
 import { getData } from '../../utils/data';
-import EditReservation from '../EditReservation';
+import EditElement from '../EditElement';
 import DeleteElement from '../DeleteElement';
 
 const ShowReservation = ({
@@ -18,6 +18,7 @@ const ShowReservation = ({
   const [room, setRoom] = useState({});
 
   const url = 'http://localhost:4000/reservations';
+  const path = '/updateReservation/';
 
   useEffect(() => {
     getData('http://localhost:4000/clients', clientId).then((res) =>
@@ -46,7 +47,7 @@ const ShowReservation = ({
       <td>{stay()}</td>
       <td>Ar {room.price * stay()}</td>
       <td>
-        <EditReservation id={id} />{' '}
+        <EditElement id={id} path={path} />{' '}
         <DeleteElement id={id} setElement={setReservations} url={url} />{' '}
         <Button variant="primary">Facturer</Button>
       </td>
