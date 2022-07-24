@@ -28,6 +28,12 @@
       "price": 1500,
       "isReserved": false,
       "id": 2
+    },
+    {
+      "name": "Chambre 3",
+      "price": 3000,
+      "isReserved": false,
+      "id": 3
     }
   ],
   "reservations": [

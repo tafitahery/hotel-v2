@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import Input from '../../components/Input';
 
 const CreateRoom = () => {
   const [name, setName] = useState('');
@@ -25,26 +26,13 @@ const CreateRoom = () => {
     <div className="mt-4 ms-3 me-3">
       <h1>Création d'un chambre</h1>
       <Form onSubmit={(e) => handleSubmit(e)}>
-        <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Nom Chambre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Entrer nom chambre"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="price">
-          <Form.Label>Prix</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Entrer prix/nuit"
-            required
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-        </Form.Group>
+        <Input
+          type="text"
+          label="nom chambre"
+          value={name}
+          setValue={setName}
+        />
+        <Input type="number" label="prix" value={price} setValue={setPrice} />
         <Button variant="primary" type="submit">
           Valider
         </Button>
