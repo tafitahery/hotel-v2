@@ -42,9 +42,8 @@ const Reservation = () => {
       setOcuppedRoomId(
         res.reduce(
           (acc, elt) =>
-            (new Date(elt.dateIn) > new Date(dateIn) ||
-              new Date(elt.dateOut) < new Date(dateIn)) &&
-            new Date(elt.dateIn) > new Date(dateOut)
+            new Date(elt.dateIn) > new Date(dateIn) ||
+            new Date(elt.dateOut) < new Date(dateIn)
               ? acc
               : [...acc, elt.roomId],
           []
@@ -116,7 +115,6 @@ const Reservation = () => {
             value={roomId}
             onChange={(e) => setRoomId(e.target.value)}
           >
-            <option value=""> --- </option>
             <option value=""> --- </option>
             {rooms.map(({ id, name }) => (
               <option value={id} key={id}>

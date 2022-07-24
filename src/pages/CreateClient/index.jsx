@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import Input from '../../components/Input';
 
 const CreateClient = () => {
   const [firstName, setFirstName] = useState('');
@@ -33,56 +34,31 @@ const CreateClient = () => {
     <div className="mt-4 ms-3 me-3">
       <h1>Création d'un client</h1>
       <Form onSubmit={(e) => hanldeSubmit(e)}>
-        <Form.Group className="mb-3" controlId="first-name">
-          <Form.Label>Prénom</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Entrer prénom"
-            required
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="last-name">
-          <Form.Label>Nom</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Entrer nom"
-            required
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="address">
-          <Form.Label>Adresse</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Entrer adresse"
-            required
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="id-card">
-          <Form.Label>CIN</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Entrer numero de CIN"
-            required
-            value={idCard}
-            onChange={(e) => setIdcard(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="phone">
-          <Form.Label>Téléphone</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Entrer numero téléphone"
-            required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </Form.Group>
+        <Input
+          type="text"
+          label="prénom"
+          value={firstName}
+          setValue={setFirstName}
+        />
+        <Input
+          type="text"
+          label="nom"
+          value={lastName}
+          setValue={setLastName}
+        />
+        <Input
+          type="text"
+          label="adresse"
+          value={address}
+          setValue={setAddress}
+        />
+        <Input type="text" label="CIN" value={idCard} setValue={setIdcard} />
+        <Input
+          type="text"
+          label="téléphone"
+          value={phone}
+          setValue={setPhone}
+        />
         <Button variant="primary" type="submit">
           Valider
         </Button>

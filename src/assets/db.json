@@ -7,6 +7,14 @@
       "idCard": "224677816520",
       "phone": "+261345267580",
       "id": 1
+    },
+    {
+      "firstName": "Lebo",
+      "lastName": "SOLOFO",
+      "address": "Tana",
+      "idCard": "188331024984",
+      "phone": "+261340353664",
+      "id": 2
     }
   ],
   "rooms": [
@@ -14,12 +22,18 @@
       "name": "Chambre 1",
       "price": 2500,
       "id": 1
+    },
+    {
+      "name": "Chambre 2",
+      "price": 1500,
+      "isReserved": false,
+      "id": 2
     }
   ],
   "reservations": [
     {
-      "dateIn": "2022-07-23",
-      "dateOut": "2022-07-27",
+      "dateIn": "2022-07-26",
+      "dateOut": "2022-07-28",
       "clientId": "1",
       "roomId": "1",
       "id": 1
