@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import Input from '../../components/Input';
 
 import { getData } from '../../utils/data';
 
@@ -74,27 +75,21 @@ const Reservation = () => {
     <div className="mt-4 ms-3 me-3">
       <h1>Réservation</h1>
       <Form onSubmit={(e) => handleSubmit(e)}>
-        <Form.Group className="mb-3" controlId="date-in">
-          <Form.Label>Date d'entrée</Form.Label>
-          <Form.Control
-            type="date"
-            min={now}
-            max={dateOut}
-            required
-            value={dateIn}
-            onChange={(e) => setDateIn(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="date-out">
-          <Form.Label>Date de sortie</Form.Label>
-          <Form.Control
-            type="date"
-            min={dateIn}
-            required
-            value={dateOut}
-            onChange={(e) => setDateOut(e.target.value)}
-          />
-        </Form.Group>
+        <Input
+          type="date"
+          label="date entrée"
+          min={now}
+          max={dateOut}
+          value={dateIn}
+          setValue={setDateIn}
+        />
+        <Input
+          type="date"
+          label="date sortie"
+          min={dateIn}
+          value={dateOut}
+          setValue={setDateOut}
+        />
         <Form.Group className="mb-3" controlId="client">
           <Form.Label>Client</Form.Label>
           <Form.Select
