@@ -3,7 +3,7 @@
     {
       "firstName": "Tafita",
       "lastName": "HERINANTENAINA",
-      "address": "tana",
+      "address": "67HA",
       "idCard": "224677816520",
       "phone": "+261345267580",
       "id": 1
@@ -38,10 +38,10 @@
   ],
   "reservations": [
     {
-      "dateIn": "2022-07-26",
-      "dateOut": "2022-07-28",
+      "dateIn": "2022-07-28",
+      "dateOut": "2022-07-30",
       "clientId": "1",
-      "roomId": "1",
+      "roomId": "3",
       "id": 1
     }
   ]

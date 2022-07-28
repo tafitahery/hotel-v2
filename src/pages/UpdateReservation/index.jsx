@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getData } from '../../utils/data';
 
@@ -18,7 +19,6 @@ const UpdateReservation = () => {
   const [roomId, setRoomId] = useState('');
   const [clients, setClients] = useState([]);
   const [rooms, setRooms] = useState([]);
-  const [availableRoomId, setAvailableRoomId] = useState([]);
 
   const { id } = useParams();
 
@@ -33,35 +33,30 @@ const UpdateReservation = () => {
   }, []);
 
   useEffect(() => {
-    getData('http://localhost:4000/rooms').then((res) => {
-      let tmp = [];
-      availableRoomId.forEach((id) =>
-        res.forEach((elt) => elt.id === parseInt(id) && tmp.push(elt))
-      );
-      setRooms(tmp);
-    });
-  }, [availableRoomId]);
+    getData('http://localhost:4000/rooms').then((res) => setRooms(res));
+  }, []);
 
-  useEffect(() => {
-    getData('http://localhost:4000/reservations').then((res) =>
-      setAvailableRoomId(
-        res.reduce(
-          (acc, elt) =>
-            (new Date(elt.dateIn) <= new Date(dateIn) &&
-              new Date(elt.dateOut) >= new Date(dateIn)) ||
-            new Date(elt.dateIn) <= new Date(dateOut)
-              ? acc
-              : [...acc, elt.roomId],
-          []
-        )
-      )
-    );
-  }, [dateIn, dateOut]);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      dateIn: dateIn ? dateIn : reservation.dateIn,
+      dateOut: dateOut ? dateOut : reservation.dateOut,
+      clientId: clientId ? clientId : reservation.clientId,
+      roomId: roomId ? roomId : reservation.roomId,
+    };
+
+    axios.put('http://localhost:4000/reservations/' + id, data);
+
+    navigate('/listReservations');
+  };
 
   return (
     <div className="mt-4 ms-3 me-3">
       <h1>Modification Réservation</h1>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="date-in">
           <Form.Label>Date d'entrée</Form.Label>
           <Form.Control
@@ -86,7 +81,7 @@ const UpdateReservation = () => {
           <Form.Label>Client</Form.Label>
           <Form.Select
             required
-            value={clientId}
+            value={clientId ? clientId : reservation.clientId}
             onChange={(e) => setClientId(e.target.value)}
           >
             <option value=""> --- </option>
@@ -99,10 +94,9 @@ const UpdateReservation = () => {
           <Form.Label>Chambre</Form.Label>
           <Form.Select
             required
-            value={roomId}
+            value={roomId ? roomId : reservation.roomId}
             onChange={(e) => setRoomId(e.target.value)}
           >
-            <option value=""> --- </option>
             <option value=""> --- </option>
             {rooms.map(({ id, name }) => (
               <option value={id} key={id}>
